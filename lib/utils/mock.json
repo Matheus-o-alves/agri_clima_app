@@ -1,0 +1,33 @@
+[{
+    "id":"0",
+    "name":"soja",
+    
+    "description":"Grão de soja para plantar",
+    "kg": 900
+  
+},
+{
+    "id":"1",
+    "name":"milho",
+   
+    "description":"Grão de milho para plantar",
+    "kg": 700
+  
+},
+{
+    "id":"2",
+    "name":"trigo",
+    
+    "description":"Grão de trigo para plantar",
+    "kg": 600
+  
+},
+{
+    "id":"3",
+    "name":"arroz",
+    
+    "description":"Grão de arroz para plantar",
+    "kg": 500
+  
+}
+]
