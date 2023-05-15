@@ -1,16 +1,12 @@
-# agri_clima_app
+# Agri App
 
-A new Flutter project.
+Este é um aplicativo desenvolvido em Flutter que permite que agricultores insiram a quantidade em massa das sementes que foram colhidas. Para gerenciar o estado do aplicativo, foi utilizado o pacote GetX, e a arquitetura do projeto segue o padrão Clean Architecture. Além disso, o projeto possui uma cobertura abrangente de testes automatizados.
 
-## Getting Started
+O projeto ainda está em construção e novas funcionalidades serão adicionadas em breve.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
