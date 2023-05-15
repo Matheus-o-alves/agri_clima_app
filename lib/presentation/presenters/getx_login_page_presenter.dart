@@ -4,6 +4,15 @@ import '../../ui/pages/login/login.presenter.dart';
 
 class GetXLoginPresenter extends GetxController implements LoginPagePresenter {
   var error = RxnString();
+  final _navigateTo = Rx<String?>(null);
+
+  @override
+  Stream<String?> get navigateToStream => _navigateTo.stream;
+
+  @override
+  Future<void> navigationHomePage() async {
+    _navigateTo.value = '/sementes-page';
+  }
 
   bool isEmailValid(String email) {
     if (email.isEmpty) {

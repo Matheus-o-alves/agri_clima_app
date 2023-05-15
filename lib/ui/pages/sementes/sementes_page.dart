@@ -13,12 +13,29 @@ class ProductListPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Text(
-          'Lista de produtos',
-          style: TextStyle(
-            color: Color(0xFF4E8179),
-            fontWeight: FontWeight.bold,
-          ),
+        title: Column(
+          children: [
+            SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.agriculture,
+                  color: Color(0xFF4E8179),
+                  size: 40,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  'Bem-vindo ao agronegócio',
+                  style: TextStyle(
+                    color: Color(0xFF4E8179),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       body: Center(
@@ -34,7 +51,11 @@ class ProductListPage extends StatelessWidget {
               ),
             );
           } else {
-            return ListView.builder(
+            return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.2,
+              ),
               itemCount: controller.products.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
@@ -56,44 +77,23 @@ class ProductListPage extends StatelessWidget {
                     elevation: 5,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: Row(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.grain,
                             color: Color(0xFF4E8179),
+                            size: 40,
                           ),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  controller.products[index].name,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF4E8179),
-                                  ),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  controller.products[index].description,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color(0xFF4E8179),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 10),
+                          SizedBox(height: 10),
                           Text(
-                            'R\$ ${controller.products[index].kg}',
+                            controller.products[index].name,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF4E8179),
                             ),
+                            textAlign: TextAlign.center,
                           ),
                         ],
                       ),

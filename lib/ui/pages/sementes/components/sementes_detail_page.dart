@@ -33,6 +33,24 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.grain,
+                  color: Color(0xFF4E8179),
+                ),
+                SizedBox(width: 10),
+                Text(
+                  widget.product.name,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4E8179),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
             Text(
               widget.product.description,
               style: TextStyle(fontSize: 18),
@@ -41,7 +59,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             Row(
               children: [
                 Text(
-                  'Quantidade (kg): ',
+                  'Quantos kg de grão você colheu? ',
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(width: 16),
@@ -74,7 +92,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                 child: Text(
-                  'Salvar',
+                  'Salvar quantidade',
                   style: TextStyle(fontSize: 18),
                 ),
               ),

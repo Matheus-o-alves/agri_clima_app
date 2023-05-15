@@ -16,18 +16,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Agri Clima',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/sementes-page',
+      initialRoute: '/login',
       getPages: [
-        // GetPage(
-        //   name: '/',
-        //   page: makeLoginPage,
-        //   transition: Transition.fadeIn,
-        // // ),
-        // GetPage(
-        //   name: '/weather-page',
-        //   page: makeWeatherPage,
-        //   transition: Transition.fadeIn,
-        // ),
+        GetPage(
+          name: '/',
+          page: makeLoginPage,
+          transition: Transition.fadeIn,
+        ),
         GetPage(
           name: '/sementes-page',
           page: makeSementesPage,
