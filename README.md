@@ -10,11 +10,11 @@ Este é um aplicativo desenvolvido em Flutter com o objetivo de ajudar pequenos 
 # Funcionalidades
 Atualmente o aplicativo conta com as seguintes funcionalidades:
 
-Listagem de sementes cadastradas
-Sincronização de sementes
-Validação de campos obrigatórios
-Edição de Massa realizada
-#Padrões utilizados
+* Listagem de sementes cadastradas
+* Sincronização de sementes
+* Validação de campos obrigatórios
+* Edição de Massa realizada
+# Padrões utilizados
 O Agro App segue o padrão de arquitetura BLoC (Business Logic Component), que permite uma separação clara de responsabilidades entre as camadas de apresentação, lógica de negócios e acesso a dados.
 
 Para gerenciar o estado das telas, foi utilizada a biblioteca GetX, que oferece uma maneira simples e eficiente de lidar com o fluxo de dados na aplicação.
