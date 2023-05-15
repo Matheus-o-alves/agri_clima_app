@@ -11,20 +11,24 @@ class ProductListController extends GetxController {
   var hasError = false.obs;
   var errorMessage = ''.obs;
   var products = <Product>[].obs;
+  var isSynced = false.obs;
   Sementes request = Sementes();
 
   @override
   void onInit() {
     super.onInit();
-    requestProducts();
+    isSynced.value = false;
   }
 
-  void requestProducts() async {
+  void syncProducts() async {
     try {
-      List<Product> grao = await request.fetchProducts();
-      for (var element in grao) {
-        products.add(element);
-      }
+      isLoading.value = true;
+      hasError.value = false;
+      errorMessage.value = '';
+      List<Product> fetchedProducts = await request.fetchProducts();
+      products.clear();
+      products.addAll(fetchedProducts);
+      isSynced.value = true;
     } catch (e) {
       hasError.value = true;
       errorMessage.value = 'Erro inesperado: $e';

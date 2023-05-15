@@ -15,6 +15,31 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   final TextEditingController _controller = TextEditingController();
   int kg = 0;
 
+  void _confirmSave() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Confirmar'),
+          content: const Text(
+              'Tem certeza que deseja salvar a quantidade de grãos colhida?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Okay'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -26,23 +51,23 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.product.name),
-        backgroundColor: Color(0xFF4E8179),
+        backgroundColor: const Color(0xFF4E8179),
       ),
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.grain,
                   color: Color(0xFF4E8179),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   widget.product.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF4E8179),
@@ -50,19 +75,19 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               widget.product.description,
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               children: [
-                Text(
+                const Text(
                   'Quantos kg de grão você colheu? ',
                   style: TextStyle(fontSize: 16),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: TextField(
                     controller: _controller,
@@ -70,7 +95,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     onChanged: (value) {
                       kg = int.tryParse(value) ?? 0;
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 16,
@@ -81,15 +106,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {
-                // TODO: enviar quantidade para API
-              },
+              onPressed: () => _confirmSave(),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Color(0xFF4E8179)),
+                backgroundColor:
+                    MaterialStateProperty.all(const Color(0xFF4E8179)),
               ),
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                 child: Text(
                   'Salvar quantidade',

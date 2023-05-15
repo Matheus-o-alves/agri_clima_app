@@ -7,6 +7,8 @@ import 'components/sementes_detail_page.dart';
 class ProductListPage extends StatelessWidget {
   final controller = Get.put(ProductListController());
 
+  ProductListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,10 +17,10 @@ class ProductListPage extends StatelessWidget {
         centerTitle: true,
         title: Column(
           children: [
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(
                   Icons.agriculture,
                   color: Color(0xFF4E8179),
@@ -26,7 +28,7 @@ class ProductListPage extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Bem-vindo ao agronegócio',
+                  'Bem-vindo ao Agro App',
                   style: TextStyle(
                     color: Color(0xFF4E8179),
                     fontWeight: FontWeight.bold,
@@ -40,19 +42,28 @@ class ProductListPage extends StatelessWidget {
       ),
       body: Center(
         child: Obx(() {
-          if (controller.isLoading.value) {
-            return CircularProgressIndicator();
+          if (!controller.isSynced.value) {
+            return const Text(
+              'Por favor, sincronize os dados',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF4E8179),
+              ),
+            );
+          } else if (controller.isLoading.value) {
+            return const CircularProgressIndicator();
           } else if (controller.hasError.value) {
             return Text(
               controller.errorMessage.value,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
             );
           } else {
             return GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1.2,
               ),
@@ -70,7 +81,8 @@ class ProductListPage extends StatelessWidget {
                     );
                   },
                   child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
@@ -80,15 +92,15 @@ class ProductListPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.grain,
                             color: Color(0xFF4E8179),
                             size: 40,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
                             controller.products[index].name,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF4E8179),
@@ -104,6 +116,11 @@ class ProductListPage extends StatelessWidget {
             );
           }
         }),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => controller.syncProducts(),
+        backgroundColor: const Color(0xFF4E8179),
+        child: const Icon(Icons.sync),
       ),
     );
   }
