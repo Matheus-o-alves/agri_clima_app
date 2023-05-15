@@ -11,7 +11,7 @@ class GetXLoginPresenter extends GetxController implements LoginPagePresenter {
 
   @override
   Future<void> navigationHomePage() async {
-    _navigateTo.value = '/sementes-page';
+    _navigateTo.value = '/product-list-page';
   }
 
   bool isEmailValid(String email) {

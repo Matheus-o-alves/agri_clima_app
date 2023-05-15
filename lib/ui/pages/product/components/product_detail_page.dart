@@ -77,14 +77,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             ),
             const SizedBox(height: 16),
             Text(
-              widget.product.description,
+              "Massa planejada: ${widget.product.kg} Kg",
               style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 16),
             Row(
               children: [
                 const Text(
-                  'Quantos kg de grão você colheu? ',
+                  'Massa realizada',
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(width: 16),

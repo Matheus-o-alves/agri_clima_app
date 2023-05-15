@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import '../../domain/usecases/product_request.dart';
 import '../models/product_model.dart';
 
-class Sementes {
+class RemoteProductRequest implements ProductRequest {
+  @override
   Future<List<Product>> fetchProducts() async {
     try {
       final response = await http.get(

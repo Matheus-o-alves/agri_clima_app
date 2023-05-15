@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../presentation/presenters/getx_sementes_presenter.dart';
-import 'components/sementes_detail_page.dart';
+import '../../../presentation/presenters/getx_product_presenter.dart';
+import 'components/product_detail_page.dart';
 
 class ProductListPage extends StatelessWidget {
   final controller = Get.put(ProductListController());
