@@ -2,7 +2,7 @@
 Este é um aplicativo desenvolvido em Flutter com o objetivo de ajudar pequenos agricultores a ter um melhor controle sobre suas colheitas.
 </p>
 <p align="center">
-  <img src="[https://user-images.githubusercontent.com/65368831/96757312-a300b500-13ab-11eb-9fae-6c0a0107d6da.gif" width="800"](https://giphy.com/embed/Z8HP8iuZr7KhlZgdpD" width="216" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Z8HP8iuZr7KhlZgdpD">via GIPHY</a></p>](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDUyNzUxYmM2ZWU1NGM0MDZiZmIxMjQ1M2FjMGVjMDEzM2VjMzk3ZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Z8HP8iuZr7KhlZgdpD/giphy.gif) />
+  <img src="https://encurtador.com.br/ertC5" />
 </p>
 
 
